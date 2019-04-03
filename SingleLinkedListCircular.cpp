@@ -72,7 +72,7 @@ void sisip(){
   int posisi;
   if(head!=NULL){
     cout<<"Sisip setelah data ke? : ";
-    cin>>posisil;
+    cin>>posisi;
     baru=new node;
     bantu=head;
     
@@ -84,7 +84,7 @@ void sisip(){
         break;
       }
     }
-    cout<<Masukkan data : ";
+    cout<<"Masukkan data : ";
      cin>>baru->data;
     baru->next=bantu->next;
     bantu->next=baru;
