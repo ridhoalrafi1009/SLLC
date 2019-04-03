@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 struct node{
   int data;
   node *next;
@@ -151,10 +152,45 @@ void cetak(){
   }
   else{
     bantu=head;
+    cout<<"[";
     while(bantu!=NULL){
-      cout<<bantu->data<<endl;
+      cout<<bantu->data<<" ";
       bantu=bantu->next;
     }
+    cout<<"]"<<endl;
+  }
+}
+
+void menu(){
+  int pilih;
+  cout<<"=================================="<<endl;
+  cout<<"==========|Menu Pilihan|=========="<<endl;
+  cout<<"=================================="<<endl;
+  cout<<"|  1. Tambah data didepan        |"<<endl;
+  cout<<"|  2. Tambah data dibelakang     |"<<endl;
+  cout<<"|  3. Hapus data didepan         |"<<endl;
+  cout<<"|  4. Hapus data dibelakang      |"<<endl;
+  cout<<"|  5. Menyisipkan data           |"<<endl;
+  cout<<"|  6. Menghapus data ke          |"<<endl;
+  cout<<"=================================="<<endl;
+  cout<<"Masukkan pilihan : ";
+  cin>>pilih;
+  
+  switch(pilih){
+    case 1:depan();
+      break;
+    case 2:belakang();
+      break;
+    case 3:hapusdepan();
+      break;
+    case 4:hapusbelakang();
+      break;
+    case 5:sisip();
+      break;
+    case 6:hapussisip();
+      break;
+    default:
+      cout<<"Pilihan salah"<<endl;
   }
 }
 
