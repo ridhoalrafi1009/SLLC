@@ -15,6 +15,7 @@ bool isEmpty(){
 void listdata(){
   node *baru, *bantu;
   baru=new node;
+  cout<<"Masukkan data: ";
   cin>>baru->data;
   baru->next=NULL;
   
@@ -33,6 +34,7 @@ void listdata(){
 void depan(){
   node *baru;
   baru=new node;
+  cout<<"Masukkan data: ";
   cin>>baru->data;
   baru->next=NULL;
   
@@ -48,6 +50,7 @@ void depan(){
 void belakang(){
   node *baru, *bantu;
   baru=new node;
+  cout<<"Masukkan data: ";
   cin>>baru->data;
   baru->next=NULL;
   
@@ -205,7 +208,6 @@ void menu(){
    for(int i=0;i<20;i++){
      menu();
      cetak();
-     break;
    }
    
   return 0;
