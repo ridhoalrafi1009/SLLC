@@ -202,5 +202,11 @@ void menu(){
      listdata();
    }
    cetak();
+   for(int i=0;i<20;i++){
+     menu();
+     cetak();
+     break;
+   }
+   
   return 0;
 }
