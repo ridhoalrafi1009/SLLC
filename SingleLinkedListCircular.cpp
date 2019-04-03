@@ -67,6 +67,33 @@ void hapusbelakang(){
   }
 }
 
+void sisip(){
+  node *baru, *bantu;
+  int posisi;
+  if(head!=NULL){
+    cout<<"Sisip setelah data ke? : ";
+    cin>>posisil;
+    baru=new node;
+    bantu=head;
+    
+    for(int i=0;i<posisi-1;i++){
+      if(bantu->next!=NULL){
+        bantu=bantu->next;
+      }
+      else{
+        break;
+      }
+    }
+    cout<<Masukkan data : ";
+     cin>>baru->data;
+    baru->next=bantu->next;
+    bantu->next=baru;
+  }
+  else{
+    cout<<"Tidak ada data";
+  }
+}       
+
 void cetak(){
   node *bantu;
   if(isEmpty()){
