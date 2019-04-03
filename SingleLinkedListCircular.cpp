@@ -11,10 +11,28 @@ bool isEmpty(){
   return head==NULL;
 }
 
-void depan(int nilai){
+void listdata(){
+  node *baru, *bantu;
+  baru=new node;
+  cin>>baru->data;
+  baru->next=NULL;
+  
+  if(isEmpty()){
+    head=baru;
+  }
+  else{
+    bantu=head;
+    while(bantu->next!=NULL){
+      bantu=bantu->next;
+    }
+    bantu->next=baru;
+  }
+}
+
+void depan(){
   node *baru;
   baru=new node;
-  baru->data=nilai;
+  cin>>baru->data;
   baru->next=NULL;
   
   if(isEmpty()){
@@ -26,11 +44,12 @@ void depan(int nilai){
   }
 }
 
-void belakang(int nilai){
+void belakang(){
   node *baru, *bantu;
   baru=new node;
-  baru->data=nilai;
+  cin>>baru->data;
   baru->next=NULL;
+  
   if(isEmpty()){
     head=baru;
   }
@@ -53,6 +72,7 @@ void hapusdepan(){
 void hapusbelakang(){
   node *baru, *bantu;
   baru=head;
+  
   if(baru->next==NULL){
     delete baru;
     head=NULL;
@@ -70,6 +90,7 @@ void hapusbelakang(){
 void sisip(){
   node *baru, *bantu;
   int posisi;
+  
   if(head!=NULL){
     cout<<"Sisip setelah data ke? : ";
     cin>>posisi;
@@ -77,6 +98,7 @@ void sisip(){
     bantu=head;
     
     for(int i=0;i<posisi-1;i++){
+      
       if(bantu->next!=NULL){
         bantu=bantu->next;
       }
@@ -97,11 +119,14 @@ void sisip(){
 void hapussisip(){
   node *bantu, *hapus;
   int hapusposisi;
+  
   if(head!=NULL){
     cout<<"hapus data ke : ";
     cin>>hapusposisi;
     bantu=head;
+    
     for(int i=1;i<hapusposisi-1;i++){
+      
       if(bantu->next!=NULL){
         bantu=bantu->next;
       }
@@ -120,6 +145,7 @@ void hapussisip(){
         
 void cetak(){
   node *bantu;
+  
   if(isEmpty()){
     cout<<"List Kosong";
   }
@@ -133,8 +159,12 @@ void cetak(){
 }
 
  int main (){
-  depan(3);
-  belakang(5);
-  cetak();
+  int x;
+   cout<<"Jumlah data : ";
+   cin>>x;
+   for(int i=0;i<x;i++){
+     listdata();
+   }
+   cetak();
   return 0;
 }
