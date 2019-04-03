@@ -94,6 +94,30 @@ void sisip(){
   }
 }       
 
+void hapussisip(){
+  node *bantu, *hapus;
+  int hapusposisi;
+  if(head!=NULL){
+    cout<<"hapus data ke : ";
+    cin>>hapusposisi;
+    bantu=head;
+    for(int i=1;i<hapusposisi-1;i++){
+      if(bantu->next!=NULL){
+        bantu=bantu->next;
+      }
+      else{
+        break;
+      }
+    }
+    hapus=bantu->next;
+    bantu->next=hapus->next;
+    delete hapus;
+  }
+  else{
+    cout<<"Tidak ada data";
+  }
+}
+        
 void cetak(){
   node *bantu;
   if(isEmpty()){
