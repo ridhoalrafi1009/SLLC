@@ -43,6 +43,30 @@ void belakang(int nilai){
   }
 }
 
+void hapusdepan(){
+  node *baru;
+  baru=head;
+  head=head->next;
+  delete baru;
+}
+
+void hapusbelakang(){
+  node *baru, *bantu;
+  baru=head;
+  if(baru->next==NULL){
+    delete baru;
+    head=NULL;
+  }
+  else{
+    while(baru->next!=NULL){
+      bantu=baru;
+      baru=baru->next;
+    }
+    delete baru;
+    bantu->next=NULL;
+  }
+}
+
 void cetak(){
   node *bantu;
   if(isEmpty()){
